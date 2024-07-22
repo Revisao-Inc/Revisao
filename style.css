@@ -1,0 +1,511 @@
+.marquee-container {
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+  color: white;
+        }
+
+        #customAlert {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: none; /* Inicialmente oculto */
+        }
+
+        .alert-content {
+            background-color: #212121;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: flex;
+            color: white;
+            max-width: auto;
+            width: 100%;
+            position: relative;
+        }
+
+        .alert-content button {
+            background-color: #424242;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .alert-content button:hover {
+            background-color: #616161;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -10px; /* Move o botão mais para cima */
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .marquee {
+          font-size: 10px;
+            display: block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+    
+        .animated-text {
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: white;
+            animation: fadeInOut 5s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(1);
+            }
+        }
+
+
+
+
+
+/* Quadrado das anotações */
+  textarea {
+        width: 100%;
+        height: 300px;
+        padding: 0px;
+        font-size: 20px;
+        border-radius: 5px;
+        resize: none;
+      background: #272727;
+      color: white;
+    outline: none; /* Adiciona esta linha para remover a marcação de foco */
+    }
+  
+  /* botão das anotações */
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color:  #616161;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+      
+    }
+  
+  /* botão das anotações ativado */
+    button:hover {
+        background-color:  #616161;
+    }
+  
+    /* menu acolhivel */
+   .accordion {
+         font-family: "Rubik", sans-serif;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #616161;
+            outline: none;
+            transition: background-color 0.4s ease, color 0.4s ease; /* Adiciona transição de cor */
+            background-color:white /* Cor do Recolhivel */
+            color: white;; /* Cor do texto */
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+     
+        }
+
+        .accordion:hover, .accordion.active {
+            background-color: #616161/* Cor de hover e ativo */
+          color: white;
+        }
+
+.accordion::after {
+    content: '⌵'; /* Unicode character for down arrow */
+    font-size: 16px;
+    color: white; /* Cor do símbolo */
+    transition: transform 0.5s ease; /* Adiciona transição ao símbolo */
+    display: inline-block;
+}
+
+.accordion.active::after {
+    transform: rotate(180deg); /* Rotaciona o símbolo ao abrir */
+}
+
+        .panel {
+              font-family: "Rubik", sans-serif;
+          width: 100%;
+          height: 100%;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out; /* Transição suave ao abrir/fechar */
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #333; /* Cor de fundo do conteúdo */
+            color: white; /* Cor do texto do conteúdo */
+        }
+
+        .panel.show {
+            max-height: 700px; /* Altura máxima para o conteúdo do painel */
+            padding: 0px; /* Adiciona padding ao abrir o painel */
+        }
+
+        .panel p {
+            margin: 20px 0;
+        }
+  .full-width-button {
+        font-family: "Rubik", sans-serif;
+    background-color: #1C1C1C;
+    color: white;
+    padding: 1px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+}
+
+button a.tab-link {
+      font-family: "Rubik", sans-serif;
+    display: block; /* Isso faz com que o link ocupe 100% da largura do botão */
+    padding: 20px 40px; /* Ajuste o padding conforme desejado */
+    background-color: #616161;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; /* O link ocupará 100% da largura do botão */
+    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+    outline: none; /* Remove a borda ao redor do botão */
+    margin: 0; /* Remove a margem do link */
+}
+
+button a.tab-link:hover {
+    background-color: #616161;
+    color: white;
+}
+
+
+        body {
+            margin: 0;
+            font-family: "Rubik", sans-serif;
+          
+            background-color: rgb(15, 15, 15);
+            color: white;
+          
+           user-select: none;
+          
+          
+        }
+
+
+
+
+
+        
+
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .main-content {
+            display: none;
+        }
+
+
+      
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to bottom, #616161FF 10%,#1C1C1C 90%);
+          
+            padding: 8px;
+            position: fixed;
+            width: 100%;
+            z-index: 9998;
+            top: 0
+        }
+
+        .hamburger-menu {
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s;
+          z-index:999;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: rotate(-50deg) translate(-6px, 5px);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: rotate(50deg) translate(-6px, -5px);
+}
+        .navbar-title {
+            font-size: 1.7em;
+            color: white;
+          
+          
+        }
+
+        .tabs-container {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            left: 0;
+            top: 40px;
+            width: 300px;
+            height: 100%;
+            background-color: black;
+          
+            padding-top: 10px;
+            transform: translateX(-100%);
+            transition: transform 0.4s;
+            z-index: 999;
+          
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+          
+        }
+
+        .tabs a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 5px 10px;
+            border: none;
+            border-radius: 7px;
+          background: #272727;
+        
+      
+        }
+
+        .tabs a:hover, .tabs a.active {
+            background-color: #545454;
+            transform: scale(1.03);
+        }
+
+        .content {
+            padding: 20px;
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            transition: opacity 0.5s;
+           
+        }
+
+        .tab-content {
+            display: none;
+            background-color:rgb(15, 15, 15);
+            padding: 0px;
+            border-radius: 0px;
+            transition: opacity 0.4s, transform 0.3s;
+            width: 100%;
+            max-width: auto;
+          flex-direction: column; /* Exibir os elementos filhos em coluna */
+        }
+  .square {
+    background-color: #212121;
+    padding: 20px;
+    margin-bottom: 35px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black; /* sombra leve */
+    max-width: auto;
+}
+
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tab-content.hidden {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+
+
+  .menu {
+      position: absolute;
+      right: 10px;
+      margin: 20px;
+      cursor: pointer;
+    }
+
+    .menu span {
+      color: white; /* Cor branca */
+      font-size: 24px; /* Tamanho maior */
+    }
+
+    .menu ul {
+      border: 1px solid white;
+      border-radius: 10px;
+      list-style-type: none;
+      padding: 0;
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #272727;
+      transition: max-height 0.5s ease-in-out;
+    }
+
+    .menu ul li {
+    padding: 15px;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    border-radius: 8px; /* ou outro valor conforme desejado */
+}
+    .menu ul li:hover {
+      background-color: #f1f1f1;
+    }
+  .no-transitions * {
+      transition: none !important;
+    }
+  
+  .image-container {
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: 200px;
+    display: block;
+}
+  
+        
+
+#notepad {
+            width: 100%;
+            height: 330px;
+        }
+        .control-panel {
+            margin-top: 10px;
+        }
+
+.menu-open {
+    overflow: hidden;
+}
+#corTexto {
+    display: none; /* Oculta o seletor de cor */
+}
+/* Remover a borda laranja ao focar nos elementos */
+select:focus, input[type="number"]:focus {
+    outline: none;
+    border: none; /* Isso remove a borda de todos os lados */
+  background: #616161;
+}
+
+  }
+  header {
+        font-family: "Rubik", sans-serif;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: block;
+  }
+  nav {
+    background-color:none;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: white;
+  }
+  nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  section {
+        font-family: "Rubik", sans-serif;
+    padding: 20px;
+    margin: 20px;
+    background-color: none;
+    border: 0px solid #ddd;
+  }
+  /* Rolagem suave */
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Efeito de piscar */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    
