@@ -20,19 +20,18 @@
 <div id="customAlert">
         <div class="alert-content">
             <button class="close-btn" onclick="closeAlert()">&times;</button>
-            <h2>Novidades das atualizações</h2>
-          <small><b><u>NOVA FONTE ADICIONADA:</u></b> <br> Foi adicionada a fonte Rubik, tornando a interface mais atraente e bonita </small>
-          <br> <br> 
-          <small> <b><u>MENU DAS NOVIDADES</u> </b><br> Como você pode ver, clicando no menu dos 3 pontos é possivel ter acesso as notas das atualizações, todas as alterações do aplicativo vão ser explicadas aqui!</small>
-          <br> <br> <br>
-         
-    <div>
-      <b> 22/07/2024 13:52h </b> - Atualizado há <span class="timer" data-update-time="2024-07-22T13:52:00"></span>
-    </div>
+          <h2> Sobre nós</h2>
+          
+          <p> <b> Qual é o objetivo Desse site?</b></p>
+          <p> O Site da Revisão tem como objetivo de Ajudar pessoas com materias das provas. Todos os conteúdos das provas você encontra aqui.</p>
+          <br>
+          <p> <strong> Plataformas</strong></p>
+          <p> Nós temos um Aplicativo Disponivel apenas para android que você pode baixar aqui:<a href="https://www.mediafire.com/folder/qpuyyl1xwj56m/Revisao">Clique Aqui para baixar (apenas em android)</a> <br> Esse site é apropriado para Aparelhos: IOS, Android e Computador como: Windows ou Linux.</p>
+          
         </div>
     </div>
     <div class="splash-screen">
-        <h1 class="splash-title">Carregando...</h1>
+       
     </div>
   
     <div class="main-content">
@@ -52,10 +51,8 @@
             
     <span>&vellip;</span>
     <ul id="menuItems">
-       <li id="alertButton">Nota das atualizações</li>
-      <li onclick="checkVersions()">Verificar versões</li>
-<li onclick="novoLink()">Compartilhar</li>
-       <li onclick="toggleTransitions()">Desativar transições</li>
+       <li id="alertButton">Sobre</li>
+      <li onclick="checkVersions()">Instalar Aplicativo</li>
     
             
     </ul>        
@@ -80,42 +77,39 @@
       
         <div class="content" id="content">
             <div id="tab1" class="tab-content hidden">
-              
               <div class="square"> 
-                <h1> Seja Bem Vindo novamente!</h1>
-                <p>Veja as novidades abaixo</p>
-          <div class="marquee-container">
-        
-    </div>
+                
+                <h1> Bem Vindo novamente!</h1>
+                <p> Você está no site oficial da Revisão</p> 
               
+                
                 
               </div>
-              <div class="square">
-                <h1>Proximas Provas</h1>
-                
-                <br>
-                
+<div class="square">
+               
+             
+                  <div class="tooltip-container">
+        <span class="tooltip-text-container"> <h2>CALENDÁRIO DAS PROVAS</h2></span>
+        <div class="tooltip-text">No Calendario das Provas, você fica informado sobre tudo das provas!</div>
+    </div>
                 <h3> Trabalho de Geografia</h3>
 
-                <h5>Data: 16 De Agosto</h5>
-                <h5>Valor: 40 Pontos</h5>
- 
-                <br>
-                
-                <br>
+                <p>16 De Agosto</p>
+               
+  <br>
                 <h3> Prova Geral De Geografia</h3>
-                <h5> Data: 23 De Agosto</h5>
-                <h5> Valor: 50 Pontos</h5>
+                <p> 23 De Agosto</p>
+  
+  
                <div class="button-container">
     <button class="full-width-button">
         <a href="#tab7" class="tab-link">Prova Geral De Geografia</a>
     </button>
                  <br>
-                 <br> 
                  <br>
                  <h3> Prova De Artes</h3>
-                 <h5> Data: Ainda não definido</h5>
-                 <h5> Valor: Ainda não definido</h5>
+                 <p> Sem informações no momento, Para Saber mais clique abaixo.
+                 
                    <div class="button-container">
     <button class="full-width-button">
         <a href="#tab9" class="tab-link">Prova De Artes</a>
@@ -123,22 +117,18 @@
                    </div>
                  
 </div>
-             
-                
-                
               </div>
-              <div class="square">
-                <h1>Informação</h1>
-                <h4> Ferias iniciadas!</h4>
-                <h5> De 19 De Julho até 28 De Julho</h5>
-          
-              </div>
-              
+
               
               <div class="square">
-                <h1>Sugestões</h1>
-                <h5> Talvez você esteja a procura de </h5>
-                <button class="accordion">Horário 9°Ano B</button>
+                    <div class="tooltip-container">
+        <span class="tooltip-text-container"> <h2>SUGESTÕES</h2></span>
+        <div class="tooltip-text">Sugere o que você pode estar a procura facilitando você.</div>
+    </div>
+               
+                <p> Você pode estar a procura de</p> 
+                
+                <button class="accordion">Horários 9°Ano B</button>
 <div class="panel">
        <div class="image-container">
         <img src="https://i.ibb.co/0c2C90d/Screenshot-20240626-142708.png" alt="Horarios 9 ano B">
@@ -146,29 +136,7 @@
  
     </div>
               </div>
-              <div class="square">
-              <h1>Anotações</h1>
-              <textarea id="notepad" placeholder="Escreva aqui..."></textarea><br>
-<button onclick="salvarAnotacoes()">Salvar</button>
-<button onclick="limparAnotacoes()">Apagar tudo</button>
-                <button><label for="corTexto">Cor do lapis</label>  </button>
-<input type="color" id="corTexto" onchange="mudarCorTexto()"> <br> <br>
-<label for="fonte">Fonte do lapis</label> 
-<select id="fonte" onchange="mudarFonte()"> 
-    <option value="Arial">Arial</option>
-<option value="Times New Roman">Times New Roman</option>
-<option value="Georgia">Georgia</option>
-<option value="Courier New">Courier New</option>
-<option value="'Merienda', cursive">Merienda</option>
-<option value="'Bitter', serif">Bitter</option>
-<option value="'Bebas Neue', cursive">Bebas Neue</option>
-<option value="'Playfair Display', serif">Playfair Display</option>
-</select>
-                <br> <br>
-<label for="tamanhoFonte">Tamanho do lapis</label>
-<input type="number" id="tamanhoFonte" min="10" max="24" value="14" onchange="mudarTamanhoFonte()">
-              </div>
-             
+
             </div>
           <!--Começo da div de matematica-->
             <div id="tab2" class="tab-content hidden">
@@ -390,7 +358,10 @@
               <h2> CONTEÚDOS</h2>
               
               <br>
-              <h2> <u>Questionario da Arte Conceitual</u></h2>
+                               <div class="tooltip-container">
+        <span class="tooltip-text-container"> <h2> Questionario Da Arte conceitual</h2></span>
+        <div class="tooltip-text">Arte conceitual é um movimento artístico onde a ideia ou conceito por trás da obra é mais importante do que a execução estética.</div>
+    </div>
               <br>
               <h3>1) Quando Começou a divulgação da arte conceitual?:</h3>
               <small> A Partir dos anos 1970</small>
@@ -460,7 +431,7 @@
               <br> <br> <br> <br>
               <hr>
                   <div>
-                    <b>  Editado pela Ultima vez</b> há <span class="timer" data-update-time="2024-07-21T01:56:00"></span><br> <br><b> Por:</b> Equipe Revisão
+                    <b>  Editado pela Ultima vez:</b> há <span class="timer" data-update-time="2024-07-23T19:30:00"></span><br> <br><b> Por:</b> Equipe Revisão
     </div>
      
               </div>

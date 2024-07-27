@@ -1,8 +1,64 @@
-.marquee-container {
-            width: 100%;
-            overflow: hidden;
-            box-sizing: border-box;
-  color: white;
+
+.tooltip-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip-text {
+            visibility: hidden;
+            width: auto;
+            max-width: 250px; /* Largura mÃ¡xima para o balÃ£o */
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 15px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Posiciona o balÃ£o acima do texto */
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: normal; /* Quebra de linha automÃ¡tica */
+            word-wrap: break-word; /* Quebra de palavras longas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        }
+
+        .tooltip-text::after {
+            content: " ";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+
+        .tooltip-text-container {
+            font-size: 18px;
+            color: #007BFF; /* Cor do texto */
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .tooltip-text {
+                max-width: 200px; /* Ajuste para telas menores */
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .tooltip-text-container {
+                font-size: 16px;
+            }
         }
 
         #customAlert {
@@ -14,6 +70,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+          backdrop-filter: blur(10px);
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             display: none; /* Inicialmente oculto */
@@ -26,18 +83,18 @@
             text-align: flex;
             color: white;
             max-width: auto;
-            width: 100%;
+            width: 400px;
             position: relative;
         }
 
         .alert-content button {
-            background-color: #424242;
+            background-color: #616161;
             color: white;
             border: none;
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         .alert-content button:hover {
@@ -46,7 +103,7 @@
 
         .close-btn {
             position: absolute;
-            top: -10px; /* Move o botão mais para cima */
+            top: -10px; /* Move o botÃ£o mais para cima */
             right: 10px;
             background-color: transparent;
             border: none;
@@ -55,54 +112,33 @@
             cursor: pointer;
         }
 
-        .marquee {
-          font-size: 10px;
-            display: block;
-            white-space: nowrap;
-            animation: marquee 20s linear infinite;
-        }
-
-        @keyframes marquee {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
-        }
-    
-        .animated-text {
-            font-size: 0.7rem;
-            font-weight: bold;
-            color: white;
-            animation: fadeInOut 5s infinite;
-        }
-
-        @keyframes fadeInOut {
-            0%, 100% {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            50% {
-                opacity: 1;
-                transform: translateY(1);
-            }
-        }
-
-
-
-
-
-/* Quadrado das anotações */
-  textarea {
-        width: 100%;
-        height: 300px;
-        padding: 0px;
-        font-size: 20px;
-        border-radius: 5px;
-        resize: none;
-      background: #272727;
-      color: white;
-    outline: none; /* Adiciona esta linha para remover a marcação de foco */
-    }
+        
+.exam {
   
-  /* botão das anotações */
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .exam:hover {
+            transform: scale(1.01);
+            background-color: #424242;
+        }
+
+
+        .exam p {
+            font-weight: 300;
+          font-size: 14px;
+        }
+.exam h2 {
+  color: aliceblue
+}
+
+
+  /* botÃ£o das anotaÃ§Ãµes */
     button {
         padding: 10px 20px;
         font-size: 16px;
@@ -115,7 +151,7 @@
       
     }
   
-  /* botão das anotações ativado */
+  /* botÃ£o das anotaÃ§Ãµes ativado */
     button:hover {
         background-color:  #616161;
     }
@@ -124,21 +160,21 @@
    .accordion {
          font-family: "Rubik", sans-serif;
             cursor: pointer;
-            padding: 18px;
+            padding: 20px;
             width: 100%;
             text-align: center;
             border: 1px solid #616161;
             outline: none;
-            transition: background-color 0.4s ease, color 0.4s ease; /* Adiciona transição de cor */
+            transition: background-color 0.4s ease, color 0.4s ease; /* Adiciona transiÃ§Ã£o de cor */
             background-color:white /* Cor do Recolhivel */
-            color: white;; /* Cor do texto */
+            color: white;: /* Cor do texto */
             font-size: 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
      
         }
 
@@ -149,32 +185,32 @@
 
 .accordion::after {
     content: '⌵'; /* Unicode character for down arrow */
-    font-size: 16px;
-    color: white; /* Cor do símbolo */
-    transition: transform 0.5s ease; /* Adiciona transição ao símbolo */
+    font-size: 14px;
+    color: white; /* Cor do sÃ­mbolo */
+    transition: transform 0.5s ease; /* Adiciona transiÃ§Ã£o ao sÃ­mbolo */
     display: inline-block;
 }
 
 .accordion.active::after {
-    transform: rotate(180deg); /* Rotaciona o símbolo ao abrir */
+    transform: rotate(180deg); /* Rotaciona o sÃ­mbolo ao abrir */
 }
 
         .panel {
-              font-family: "Rubik", sans-serif;
+              
           width: 100%;
           height: 100%;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.2s ease-out; /* Transição suave ao abrir/fechar */
-            margin-bottom: 20px;
+            transition: max-height 0.2s ease-out; /* TransiÃ§Ã£o suave ao abrir/fechar */
+            margin-bottom: 10px;
             border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: #333; /* Cor de fundo do conteúdo */
-            color: white; /* Cor do texto do conteúdo */
+            background-color: #333; /* Cor de fundo do conteÃºdo */
+            color: white; /* Cor do texto do conteÃºdo */
         }
 
         .panel.show {
-            max-height: 700px; /* Altura máxima para o conteúdo do painel */
+            max-height: 700px; /* Altura mÃ¡xima para o conteÃºdo do painel */
             padding: 0px; /* Adiciona padding ao abrir o painel */
         }
 
@@ -193,19 +229,19 @@
 
 button a.tab-link {
       font-family: "Rubik", sans-serif;
-    display: block; /* Isso faz com que o link ocupe 100% da largura do botão */
-    padding: 20px 40px; /* Ajuste o padding conforme desejado */
+    display: block; /* Isso faz com que o link ocupe 100% da largura do botÃ£o */
+    padding: 20px 20px; /* Ajuste o padding conforme desejado */
     background-color: #616161;
     color: white;
-    border: 1px solid black;
+    border: none;
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    width: 100%; /* O link ocupará 100% da largura do botão */
+    width: 100%; /* O link ocuparÃ¡ 100% da largura do botÃ£o */
     box-sizing: border-box; /* Inclui o padding e a borda na largura total */
-    outline: none; /* Remove a borda ao redor do botão */
+    outline: none; /* Remove a borda ao redor do botÃ£o */
     margin: 0; /* Remove a margem do link */
 }
 
@@ -218,10 +254,8 @@ button a.tab-link:hover {
         body {
             margin: 0;
             font-family: "Rubik", sans-serif;
-          
             background-color: rgb(15, 15, 15);
             color: white;
-          
            user-select: none;
           
           
@@ -266,9 +300,9 @@ button a.tab-link:hover {
         .navbar {
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #616161FF 10%,#1C1C1C 90%);
+            background: linear-gradient(to bottom, #616161FF 20%,#1C1C1C 90%);
           
-            padding: 8px;
+            padding: 7px;
             position: fixed;
             width: 100%;
             z-index: 9998;
@@ -351,7 +385,7 @@ button a.tab-link:hover {
 
         .content {
             padding: 20px;
-            margin-top: 60px;
+            margin-top: 65px;
             display: flex;
             justify-content: center;
             transition: opacity 0.5s;
@@ -363,18 +397,31 @@ button a.tab-link:hover {
             background-color:rgb(15, 15, 15);
             padding: 0px;
             border-radius: 0px;
-            transition: opacity 0.4s, transform 0.3s;
+            transition: opacity 0.2s, transform 0.2s;
             width: 100%;
             max-width: auto;
           flex-direction: column; /* Exibir os elementos filhos em coluna */
+          
         }
   .square {
+    width: auto;
+    border: 5px solid black;
     background-color: #212121;
     padding: 20px;
-    margin-bottom: 35px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px black; /* sombra leve */
+    margin-bottom: 45px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px black; /* sombra leve */
     max-width: auto;
+}
+
+.square h2 {
+  color: #f1f1f1;
+  font-size: 25px;
+  
+}
+.square p {
+  font-size: 15px;
+  color: whitesmoke;
 }
 
         .tab-content.active {
@@ -429,7 +476,7 @@ button a.tab-link:hover {
   
   .image-container {
     width: 100%;
-    max-width: 500px;
+    max-width: auto;
     height: 200px;
     border: none;
     border-radius: 5px;
@@ -496,16 +543,3 @@ select:focus, input[type="number"]:focus {
     background-color: none;
     border: 0px solid #ddd;
   }
-  /* Rolagem suave */
-  html {
-    scroll-behavior: smooth;
-  }
-  /* Efeito de piscar */
-  @keyframes blink {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    
