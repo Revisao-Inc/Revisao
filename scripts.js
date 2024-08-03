@@ -85,7 +85,7 @@ function closeMenu(event) {
             // Transição para ocultar todas as abas
             tabContents.forEach(content => {
                 content.classList.add('hidden');
-                setTimeout(() => content.classList.remove('active'), 300);
+                setTimeout(() => content.classList.remove('active'), 500);
             });
 
             // Mostra a aba selecionada com transição
@@ -93,7 +93,7 @@ function closeMenu(event) {
             setTimeout(() => {
                 tabContent.classList.add('active');
                 tabContent.classList.remove('hidden');
-            }, 300);
+            }, 500);
 
             // Adiciona estado ao histórico
             const tabId = this.getAttribute('href').substring(1);

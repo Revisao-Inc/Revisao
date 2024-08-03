@@ -1,37 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>M&M Relógios/Inicio</title>
+<div id="box" style="width:50px; height:50px; background-color:red; position:absolute; left:0px; top:0px;"></div>
 
- 
-  
-<body>
-     <header> 
-    <img id="img-mm" src=" https://i.ibb.co/j65HvMf/1783919386.png" alt="M&M Relógios">
-    <h1> M&M Relógios</h1>
-    </header>
-    <nav>
-        <a href="index.html" style="color: blue;">Inicio</a>
-       <a href="consertos.html"> Consertos</a>
-    </nav>
-    <section> 
-    <h1> M&M Relógios</h1>
-    <p> Seja bem vindo a página principal da M&M Relógios </p>
-    </section>
-    <section> 
-    <h1> M&M Relógios</h1>
-    <p> Seja bem vindo a página principal da M&M Relógios </p>
-    </section>
-    <footer>
-      <h3>&copy; 2024 M&M Relógios. Todos os direitos reservados.</h3>
-       <button id="facebook-mm"<a href="https://www.facebook.com/MeMrelogios?mibextid=ZbWKwL" target="_blank"> Facebook </a></button>
-       <button id="Whatsapp-mm"><a href="https://wa.me/555384168637" target="_blank">Conversar no WhatsApp</a></button>
-       
-       </footer>
-</body>
-</html>
+<script type="text/javascript">
+    function moveBox() {
+        var box = document.getElementById("box");
+        var left = 0;
+        var top = 0;
+        var interval = setInterval(function() {
+            if (left < 300) {
+                left += 5;
+                box.style.left = left + "px";
+            }
+            if (top < 300) {
+                top += 5;
+                box.style.top = top + "px";
+            }
+            if (left >= 300 && top >= 300) {
+                clearInterval(interval);
+            }
+        }, 50);
+    }
+    moveBox();
+</script>
